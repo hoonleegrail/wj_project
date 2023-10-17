@@ -1,0 +1,15 @@
+SELECT distinct d.course_id, d.title, d.description, d.avg_rating, d.num_reviews, d.instructional_level_simple, d.content_info, d.prerequisites, d.objectives, d.target_audiences, l.locale, abc.title_cleaned, t.display_name
+FROM merge_course_data_df_info_ko_en d 
+JOIN merge_course_locale_data_df_info_ko_en l ON d.course_id=l.course_id 
+JOIN (SELECT course_id, title_cleaned
+FROM merge_intended_category_df_info_ko_en
+UNION ALL
+SELECT course_id, title_cleaned
+FROM merge_primary_category_df_info_ko_en
+UNION ALL
+SELECT course_id, title_cleaned
+FROM merge_primary_subcategory_df_info_ko_en) AS abc ON d.course_id=abc.course_id
+#JOIN merge_intended_category_df_info_ko_en a ON d.course_id=a.course_id 
+#JOIN merge_primary_category_df_info_ko_en b ON d.course_id=b.course_id 
+#JOIN merge_primary_subcategory_df_info_ko_en c ON d.course_id=c.course_id 
+JOIN merge_visible_instructors_df_ko_en t ON d.course_id=t.course_id
