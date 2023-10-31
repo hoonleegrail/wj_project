@@ -1,0 +1,22 @@
+.qmenu {
+  padding: 0 46px;
+  height: 50px;
+  width: 1060px;
+  display: flex;
+}
+
+.qmenu .category {
+  background: #000;
+  color: white;
+}
+
+.qmenu .category a {
+  display: block;
+  width: 100%;
+  line-height: 50px;
+  height: 50px;
+}
+
+.qmenu .category li {
+  height: 50px;
+}

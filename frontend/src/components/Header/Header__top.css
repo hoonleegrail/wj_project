@@ -1,0 +1,8 @@
+.header_top {
+  height: 72px;
+  line-height: 72px;
+}
+
+.header_top > * {
+  float: left;
+}

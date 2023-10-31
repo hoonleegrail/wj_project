@@ -1,0 +1,9 @@
+.home {
+  display: block;
+  width: 140px;
+  height: 40px;
+  margin: 10px 0 10px 20px;
+  text-indent: -9999px;
+  background-image: url("../_Asset/logo.png");
+  background-size: cover;
+}
