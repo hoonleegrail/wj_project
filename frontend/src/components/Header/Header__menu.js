@@ -27,26 +27,31 @@ export default () => {
   ];
 
   return (
-    <ul className="qmenu inner">
-      <a href="#">카테고리</a>
-      <li className="category">
-        <ul>
-          {categories.map((el) => {
-            return (
-              <li>
-                <a href={el[1]}>{el[0]}</a>
-              </li>
-            );
-          })}
-        </ul>
-      </li>
-      {event.map((el) => {
-        return (
-          <li className={el.className}>
-            <a href={el.url}>{el.name}</a>
-          </li>
-        );
-      })}
-    </ul>
+    <div className="qmenu">
+      <ul className="inner">
+        <li className="category">
+          <a href="#">카테고리</a>
+          <ul>
+            {categories.map((el) => {
+              return (
+                <li>
+                  <a href={el[1]}>{el[0]}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </li>
+        {event.map((el) => {
+          return (
+            <li className={el.className}>
+              <a href={el.url}>{el.name}</a>
+            </li>
+          );
+        })}
+        <li className="uService float__right">
+          <a href="#">유데미 서비스</a>
+        </li>
+      </ul>
+    </div>
   );
 };

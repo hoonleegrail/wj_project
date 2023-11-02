@@ -1,0 +1,29 @@
+.pick {
+  max-width: 340px;
+  width: 100%;
+  height: 100%;
+}
+
+.pick img {
+  width: 100%;
+  height: 214px;
+}
+
+p.lecture_name {
+  word-break: break-all;
+  margin: 18px 0;
+}
+
+p:not(.lecture_name) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+p:not(.lecture_name) button {
+  width: 110px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}

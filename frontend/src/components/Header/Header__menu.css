@@ -1,13 +1,28 @@
 .qmenu {
-  padding: 0 46px;
   height: 50px;
-  width: 1060px;
-  display: flex;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.qmenu > ul > li {
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  float: left;
+}
+
+.qmenu > ul > li.special::after {
+  content: "*";
+  color: purple;
+  position: relative;
+  top: -5px;
 }
 
 .qmenu .category {
   background: #000;
   color: white;
+  position: relative;
 }
 
 .qmenu .category a {
@@ -17,6 +32,44 @@
   height: 50px;
 }
 
-.qmenu .category li {
-  height: 50px;
+.qmenu .category a::before {
+  content: "";
+}
+
+.qmenu .category ul {
+  overflow: hidden;
+  height: 0;
+  position: absolute;
+  width: 150px;
+  left: 0;
+  top: 50px;
+  background: #000;
+  transition: all 0.3s ease;
+}
+
+.qmenu .category:hover ul {
+  display: block;
+  height: 650px;
+}
+
+.qmenu .category ul li {
+  line-height: 50px;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+.qmenu .category ul li:hover {
+  background: #ddd;
+  color: black;
+}
+
+.uService::after {
+  content: ">";
+  margin-left: 10px;
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+.qmenu > ul > li.float__right {
+  float: right;
 }

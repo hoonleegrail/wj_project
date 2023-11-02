@@ -10,6 +10,12 @@ export default function () {
     ico: "./frontend/src/components/_Asset/ico.png",
     fav: ["Python", "Javascript", "NodeJS"],
   };
+  const userStyle = {
+    backgroundImage: `url('/image/ico.png')`,
+    backgroundSize: "50px",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  };
 
   return (
     <ul className="header__gnb gnb">
@@ -25,7 +31,7 @@ export default function () {
       <li className="gnb_item">
         <a href="#">기업교육</a>
       </li>
-      <li className="gnb_item" style={{ backgroundImage: user.ico }}>
+      <li className="gnb_item user" style={userStyle}>
         <a href="#"></a>
       </li>
     </ul>

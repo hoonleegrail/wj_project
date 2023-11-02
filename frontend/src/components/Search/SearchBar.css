@@ -1,0 +1,106 @@
+.search__container {
+  width: 100%;
+  max-width: 500px;
+  height: 50px;
+  position: relative;
+}
+
+input.search__bar {
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 50px;
+  border-radius: 10px;
+  padding-left: 40px;
+}
+
+a.search__icon {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("https://cdn-icons-png.flaticon.com/256/3917/3917132.png");
+  background-size: cover;
+}
+
+.search_relative {
+  width: 100%;
+  height: 540px;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 1px);
+  border-radius: 10px;
+  border: 1px solid #000;
+  opacity: 0;
+  transition: opacity 0.4s;
+  overflow: hidden;
+  background: white;
+}
+
+.search_relative > * {
+  padding: 0 28px;
+}
+
+/* keyword
+relative_special_event */
+
+.search_relative h2 {
+  margin: 26px 0;
+}
+
+.search__bar:focus ~ .search_relative {
+  opacity: 1;
+}
+
+.keyword {
+  margin: 28px 0 120px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px 28px;
+  line-height: 1;
+  justify-content: start;
+}
+/*  */
+
+.search_relative .close {
+  position: absolute;
+  bottom: 0;
+  background: #ddd;
+  border-top: 1px solid #999;
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  text-align: right;
+  padding: 0;
+}
+
+.search_relative .close button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  line-height: 44px;
+  padding: 0 28px;
+}
+
+/*  */
+
+.relative_special_event {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.relative_special_event a {
+  display: block;
+}
+
+.relative_special_event img {
+  width: 210px;
+  height: 140px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}

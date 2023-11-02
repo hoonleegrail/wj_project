@@ -1,0 +1,44 @@
+.curation_container {
+  position: relative;
+}
+
+.pick_wrap {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
+  gap: 20px;
+  width: 2500px;
+}
+
+.pick_container {
+  position: relative;
+  overflow: hidden;
+}
+
+.curation_container > button:not(.more) {
+  cursor: pointer;
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background: #000;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.curation_container > button.left {
+  left: -15px;
+  top: 40%;
+  transform: translateY(-100%);
+}
+
+.curation_container > button.right {
+  right: -15px;
+  top: 40%;
+  transform: translateY(-100%);
+}
