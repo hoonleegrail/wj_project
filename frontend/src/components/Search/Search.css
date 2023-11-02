@@ -9,9 +9,14 @@
   text-align: center;
 }
 
+.tempBox {
+  height: 193.5px;
+}
+
 .search_box__container .result__box {
   padding-left: 20px;
-  margin-top: 48px;
+  margin: 48px 0;
+  overflow: hidden;
 }
 
 .search_box__container .result__box * {

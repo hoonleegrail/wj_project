@@ -54,6 +54,7 @@ export default (props) => {
         <div className="search__AI inner">
           <SearchBar inputChangeHanler={inputChangeHanler} />
           <Recommand op={props.op}></Recommand>
+          <div className="tempBox"></div>
         </div>
         <div></div>
       </div>
