@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "user-name": "",
+      "record": [],
+      "recommendation_list": ["numpy", "pandas", "matplotlib", "r", "library"],
+      "keyword": []
+    },
+    {
+      "id": 2,
+      "user-name": "",
+      "record": ["numpy", "r"],
+      "recommendation_list": [
+        "pandas",
+        "matplotlib",
+        "library",
+        "plotly",
+        "jullia"
+      ],
+      "keyword": []
+    },
+    {
+      "id": 3,
+      "user-name": "",
+      "record": [],
+      "recommendation_list": [
+        "multithreading",
+        "ee",
+        "concurrency",
+        "jsp",
+        "reactive"
+      ],
+      "keyword": []
+    }
+  ],
+  "lectures": [
+    {
+      "id": 1,
+      "name": "",
+      "link": ""
+    }
+  ]
+}

@@ -4,17 +4,34 @@ import SearchBar from "./SearchBar";
 import "./Search.css";
 
 export default (props) => {
+  // userID에 따른 추천 키워드.. ReactRoute에 대해서 잘 몰라서, 조건 분기를 못 만들었다.
+  const userIDRecommands = [
+    [
+      { url: "#", result: "numpy" },
+      { url: "#", result: "pandas" },
+      { url: "#", result: "matplotlib" },
+      { url: "#", result: "r" },
+      { url: "#", result: "library" },
+    ],
+    [
+      { url: "#", result: "pandas" },
+      { url: "#", result: "matplotlib" },
+      { url: "#", result: "library" },
+      { url: "#", result: "plotly" },
+      { url: "#", result: "julia" },
+    ],
+    [
+      { url: "#", result: "multithreading" },
+      { url: "#", result: "ee" },
+      { url: "#", result: "concurrency" },
+      { url: "#", result: "jsp" },
+      { url: "#", result: "reactive" },
+    ],
+  ];
+
   const [isSearch, setIsSearch] = useState(null);
   const [relativeSearch, setRelativeSearch] = useState(null);
-  const [isSearchResult, setIsSearchResult] = useState([
-    { url: "#", result: "ChatGPT" },
-    { url: "#", result: "파이썬" },
-    { url: "#", result: "프론트엔드 개발" },
-    { url: "#", result: "백엔드 개발" },
-    { url: "#", result: "파이썬" },
-    { url: "#", result: "프론트엔드 개발" },
-    { url: "#", result: "백엔드 개발" },
-  ]);
+  const [isSearchResult, setIsSearchResult] = useState(userIDRecommands[2]);
 
   const inputChangeHanler = (input) => {
     setIsSearch(input.target.value);
@@ -48,18 +65,7 @@ export default (props) => {
     }
   };
 
-  if (!isSearch) {
-    return (
-      <div className="search_box__container">
-        <div className="search__AI inner">
-          <SearchBar inputChangeHanler={inputChangeHanler} />
-          <Recommand op={props.op}></Recommand>
-          <div className="tempBox"></div>
-        </div>
-        <div></div>
-      </div>
-    );
-  } else {
+  if (isSearch === "python") {
     return (
       <div className="search_box__container inner">
         <div className="search__AI">
@@ -73,6 +79,33 @@ export default (props) => {
             return <a href={el.url}>{el.result}</a>;
           })}
         </div>
+      </div>
+    );
+  } else if (isSearch === "java") {
+    return (
+      <div className="search_box__container inner">
+        <div className="search__AI">
+          <SearchBar inputChangeHanler={inputChangeHanler} />
+          <Recommand op={props.op}></Recommand>
+        </div>
+        <div className="result__text">"{isSearch}"에 대한 검색 결과</div>
+        <div className="result__box">
+          <span>추천 검색어 | </span>
+          {userIDRecommands[2].map((el) => {
+            return <a href={el.url}>{el.result}</a>;
+          })}
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="search_box__container">
+        <div className="search__AI inner">
+          <SearchBar inputChangeHanler={inputChangeHanler} />
+          <Recommand op={props.op}></Recommand>
+          <div className="tempBox"></div>
+        </div>
+        <div></div>
       </div>
     );
   }
